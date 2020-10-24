@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Text } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -11,10 +13,32 @@ import Profile from './components/Profile';
 import Login from './auth/Login';
 import Register from './auth/Register';
 
+import auth from '@react-native-firebase/auth';
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 export default class App extends Component{
+
+
+  constructor() {
+    super();
+    this.state = {
+      loading: true,
+      authenticated: false
+    }
+  }
+
+  componentDidMount() {
+    auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ loading: false, authenticated: true });
+      } else {
+        this.setState({ loading: false, authenticated: false });
+      }
+    });
+  }
+
 
   createHomeTab = () => {
     return(
@@ -31,16 +55,33 @@ createAuthStack = () => {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="Home" component={this.createHomeTab} />
+        {/* <Stack.Screen name="Home" component={this.createHomeTab} /> */}
       </Stack.Navigator>
     );
   }
 
   render(){
-  return (
-    <NavigationContainer>
-      { this.createAuthStack() }
-    </NavigationContainer>
-  );
+  if (this.state.loading){
+    return(
+      <Text>Loading...</Text>
+    );
+  }
+
+  else if (!this.state.authenticated) {
+    return(
+      <NavigationContainer>
+        { this.createAuthStack() }
+      </NavigationContainer>
+    );
+  }
+
+  else {
+    return (
+      <NavigationContainer>
+        { this.createHomeTab() }
+      </NavigationContainer>
+    );
+  }
 }
+
 }

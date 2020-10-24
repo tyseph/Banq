@@ -1,12 +1,12 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
-function Wallet() {
+export default class Wallt extends Component {
+  render(){
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View>
       <Text>Wallet</Text>
     </View>
   );
 }
-
-export default Wallet;
+}
