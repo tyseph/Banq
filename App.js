@@ -42,7 +42,7 @@ export default class App extends Component{
 
   createHomeTab = () => {
     return(
-        <Tab.Navigator>
+        <Tab.Navigator initialRouteName="Home">
           <Tab.Screen name="Wallet" component={Wallet} />
           <Tab.Screen name="Home" component={HomeScreen} />
           <Tab.Screen name="Profile" component={Profile} />
@@ -52,8 +52,8 @@ export default class App extends Component{
   
 createAuthStack = () => {
     return(
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
+      <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false}}>
+        <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Register" component={Register} />
         {/* <Stack.Screen name="Home" component={this.createHomeTab} /> */}
       </Stack.Navigator>
