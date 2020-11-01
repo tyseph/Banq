@@ -22,7 +22,7 @@ export default class Login extends Component{
 
                 console.log(email + " " + password + "" + checkPassword);
                 
-                if (!email && !password) {
+                if (!email || !password) {
                         window.alert('Enter Username and Password');
                 }
 
@@ -35,7 +35,7 @@ export default class Login extends Component{
                         .createUserWithEmailAndPassword(email, password)
                         .then(() => {
                         console.log('signed in!');
-                        this.props.navigation.navigate('Home');
+                        // this.props.navigation.navigate('Home');
                         })
                         .catch(error => {
                         if (error.code === 'auth/email-already-in-use') {

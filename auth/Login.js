@@ -20,7 +20,7 @@ export default class Login extends Component{
 
                 console.log(email + " " + password);
                 
-                if (!email && !password) {
+                if (!email || !password) {
                         window.alert('Enter Username and Password');
                 }
                 
