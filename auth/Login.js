@@ -55,7 +55,12 @@ export default class Login extends Component {
           onChangeText={password => this.setState({password})}
           value={this.state.password}
         />
-        <Button title="Login" onPress={this.SignIn} />
+        <Button
+          title="Login"
+          onPress={() => {
+            this.props.navigation.navigate('Home');
+          }}
+        />
         <Button
           title="Go to register"
           onPress={() => {
