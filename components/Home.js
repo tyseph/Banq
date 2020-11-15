@@ -1,5 +1,14 @@
 import React, {Component} from 'react';
-import {Text, View, Button, FlatList} from 'react-native';
+// import {View, Button, FlatList} from 'react-native';
+import {
+  Container,
+  Header,
+  Content,
+  Card,
+  CardItem,
+  Body,
+  Text,
+} from 'native-base';
 
 //import NavBar from '../elements/NavBar';
 import firestore from '@react-native-firebase/firestore';
@@ -52,23 +61,18 @@ export default class HomeScreen extends Component {
   render() {
     // if (this.state.openNavBar == false) {
     return (
-      <View>
-        <Text>Home!</Text>
-        <Button title="Icon" />
-        <Button title="print" />
-        <View>
-          <Text>Banq</Text>
-          <FlatList
-            // data={this.state.userArr}
-            keyExtractor={elem => elem.budget}
-            renderItem={elem => (
-              <View>
-                <Text>{elem.item.budget}</Text>
-              </View>
-            )}
-          />
-        </View>
-      </View>
+      <Container>
+        <Header />
+        <Content>
+          <Card>
+            <CardItem>
+              <Body>
+                <Text>THIS IS A CARD</Text>
+              </Body>
+            </CardItem>
+          </Card>
+        </Content>
+      </Container>
     );
     // } else {
     //   return (
