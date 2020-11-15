@@ -123,7 +123,7 @@ export default class HomeScreen extends Component {
                       style={{
                         color: 'black',
                       }}>
-                      > GeekyAnts
+                      ekyAnts
                     </Text>
                   </Body>
                 </CardItem>
