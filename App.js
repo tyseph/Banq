@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-
 import HomeScreen from './components/Home';
 import Wallet from './components/Wallet';
 import Profile from './components/Profile';
@@ -19,7 +18,6 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 export default class App extends Component{
-
 
   constructor() {
     super();
@@ -38,7 +36,6 @@ export default class App extends Component{
       }
     });
   }
-
 
   createHomeTab = () => {
     return(
@@ -83,5 +80,4 @@ createAuthStack = () => {
     );
   }
 }
-
 }

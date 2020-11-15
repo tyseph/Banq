@@ -8,6 +8,7 @@ export default class Login extends Component{
         constructor(props) {
                 super(props);
                 this.state = {
+                        displayName: '',
                         email: '',
                         password: '',
                         confirmPassword: ''
@@ -16,11 +17,12 @@ export default class Login extends Component{
 
         Register = () => {
 
+                let displayName = this.state.displayName;
                 let email = this.state.email;
                 let password = this.state.password;
                 let checkPassword = this.state.checkPassword;
 
-                console.log(email + " " + password + "" + checkPassword);
+                console.log(displayName+ " " + email + " " + password + "" + checkPassword);
                 
                 if (!email || !password) {
                         window.alert('Enter Username and Password');
@@ -55,6 +57,7 @@ export default class Login extends Component{
             return(
                 <View>
                 <Text>Register</Text>
+                <TextInput placeholder="Name" onChangeText={(displayName) => this.setState({displayName})} value={this.state.displayName} />
                 <TextInput placeholder="Username" onChangeText={(email) => this.setState({email})} value={this.state.email} />
                 <TextInput placeholder="Password" onChangeText={(password) => this.setState({password})} value={this.state.password} />
                 <TextInput placeholder="Confirm Password" onChangeText={(checkPassword) => this.setState({checkPassword})} value={this.state.checkPassword} />

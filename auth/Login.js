@@ -18,7 +18,7 @@ export default class Login extends Component{
                 let email = this.state.email;
                 let password = this.state.password;
 
-                console.log(email + " " + password);
+                console.log(email + " - " + password + " - " + displayName);
                 
                 if (!email || !password) {
                         window.alert('Enter Username and Password');

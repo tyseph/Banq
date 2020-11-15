@@ -218,3 +218,14 @@ task copyDownloadableDepsToLibs(type: Copy) {
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
 apply plugin: 'com.google.gms.google-services'
+
+android {
+    defaultConfig {
+        multiDexEnabled true
+    }
+}
+
+dependencies {
+  // multidex support at time of writing this 1.0.3 was latest make sure you add latest version
+  implementation 'com.android.support:multidex:1.0.3'
+}
