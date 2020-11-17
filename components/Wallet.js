@@ -142,7 +142,7 @@ export default class Profile extends Component {
           </Card>
 
           {/* LOGOUT */}
-          <View
+          {/* <View
             style={{
               justifyContent: 'center',
               alignItems: 'center',
@@ -153,7 +153,7 @@ export default class Profile extends Component {
               style={styles.buttonStyleLogout}>
               <Text style={styles.buttonTextStyle}>Logout</Text>
             </Button>
-          </View>
+          </View> */}
         </ImageBackground>
       </View>
     );
