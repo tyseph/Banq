@@ -219,19 +219,19 @@ export default class Profile extends Component {
           </Card>
 
           {/* LOGOUT */}
-          <View
-            style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Button
-              rounded
-              // onPress={() => {this.props.navigation.navigate('Home')}}
-              style={styles.buttonStyleLogout}>
-              <Text style={styles.buttonTextStyle}>Logout</Text>
-            </Button>
-          </View>
         </ImageBackground>
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Button
+            rounded
+            // onPress={() => {this.props.navigation.navigate('Home')}}
+            style={styles.buttonStyleLogout}>
+            <Text style={styles.buttonTextStyle}>Logout</Text>
+          </Button>
+        </View>
       </View>
     );
     // } else {
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
     width: '50%',
     justifyContent: 'center',
     backgroundColor: '#EA5656',
-    marginTop: 15,
+    marginTop: '50%',
   },
   buttonTextStyle: {
     fontSize: 30,
