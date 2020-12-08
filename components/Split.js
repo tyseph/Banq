@@ -62,7 +62,7 @@ export default class Split extends Component {
                 <Text style={{alignSelf: 'flex-start', fontSize: 18,
                  fontWeight: '600', fontFamily: 'Oxygen-Bold'}}>You Owe:</Text>
                  <Text style={{fontSize: 15,
-                 fontWeight: '600', fontFamily: 'Oxygen-Bold'}}>Jane :<Text style={{marginLeft: 20}}> Rs. 40</Text></Text>
+                 fontWeight: '600', fontFamily: 'Oxygen'}}>Jane :<Text style={{marginLeft: 20}}> Rs. 40</Text></Text>
               </View>
             </Body>
           </CardItem>
