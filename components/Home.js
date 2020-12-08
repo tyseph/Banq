@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
-import {ImageBackground, StyleSheet, View, Image} from 'react-native';
+import {
+  ImageBackground,
+  StyleSheet,
+  View,
+  Image,
+  ScrollView,
+} from 'react-native';
 import {
   Container,
   Header,
@@ -91,122 +97,203 @@ export default class HomeScreen extends Component {
               </Left>
             </CardItem>
           </Card>
+          <ScrollView>
+            <View
+              style={{
+                height: 500,
+              }}>
+              <Card
+                style={{
+                  alignSelf: 'center',
+                  padding: 20,
+                  height: 100,
+                  width: 350,
+                  borderRadius: 20,
+                }}>
+                <Grid>
+                  <Col>
+                    <Body
+                      style={{
+                        textAlign: 'left',
+                        padding: 0,
+                        height: 100,
+                        width: 300,
+                        borderRadius: 20,
+                      }}>
+                      <Text style={styles.largeText}>BANQ</Text>
+                      <Text note style={styles.smallText}>
+                        Budget
+                      </Text>
+                    </Body>
+                  </Col>
+                  <Col>
+                    <Body>
+                      <Text style={styles.rightText}>INR 5673</Text>
+                    </Body>
+                  </Col>
+                </Grid>
+              </Card>
 
-          <Card
-            style={{
-              alignSelf: 'center',
-              padding: 20,
-              height: 100,
-              width: 350,
-              borderRadius: 20,
-            }}>
-            <Grid>
-              <Col>
-                <Body
-                  style={{
-                    textAlign: 'left',
-                    padding: 0,
-                    height: 100,
-                    width: 300,
-                    borderRadius: 20,
-                  }}>
-                  <Text style={styles.largeText}>BANQ</Text>
-                  <Text note style={styles.smallText}>
-                    Budget
-                  </Text>
-                </Body>
-              </Col>
-              <Col>
-                <Body>
-                  <Text style={styles.rightText}>INR 5673</Text>
-                </Body>
-              </Col>
-            </Grid>
-          </Card>
+              <Card
+                style={{
+                  alignSelf: 'center',
+                  padding: 20,
+                  height: 150,
+                  width: 350,
+                  borderRadius: 20,
+                }}>
+                <Grid>
+                  <Col>
+                    <Body
+                      style={{
+                        textAlign: 'left',
+                        padding: 0,
+                        height: 100,
+                        width: 300,
+                        borderRadius: 20,
+                      }}>
+                      <Text style={styles.largeText}>Total</Text>
+                      <Text note style={styles.smallText}>
+                        Cash Available
+                      </Text>
+                    </Body>
+                  </Col>
+                  <Col>
+                    <Body>
+                      <Text style={styles.rightText}>INR 5637</Text>
+                    </Body>
+                  </Col>
+                </Grid>
+                <Grid style={{marginTop: 0}}>
+                  <Col>
+                    <Body
+                      style={{
+                        textAlign: 'left',
+                        padding: 0,
+                        height: 100,
+                        width: 300,
+                        borderRadius: 20,
+                      }}>
+                      <Text style={styles.smallText}>Days Left</Text>
+                      <Text note style={styles.largeText}>
+                        Days in Month
+                      </Text>
+                    </Body>
+                  </Col>
+                  <Col>
+                    <Body>
+                      <Text style={styles.rightText}>INR 5673</Text>
+                    </Body>
+                  </Col>
+                </Grid>
+              </Card>
 
-          <Card
-            style={{
-              alignSelf: 'center',
-              padding: 20,
-              height: 150,
-              width: 350,
-              borderRadius: 20,
-            }}>
-            <Grid>
-              <Col>
-                <Body
-                  style={{
-                    textAlign: 'left',
-                    padding: 0,
-                    height: 100,
-                    width: 300,
-                    borderRadius: 20,
-                  }}>
-                  <Text style={styles.largeText}>Total</Text>
-                  <Text note style={styles.smallText}>
-                    Cash Available
-                  </Text>
-                </Body>
-              </Col>
-              <Col>
-                <Body>
-                  <Text style={styles.rightText}>INR 5637</Text>
-                </Body>
-              </Col>
-            </Grid>
-            <Grid style={{marginTop: 0}}>
-              <Col>
-                <Body
-                  style={{
-                    textAlign: 'left',
-                    padding: 0,
-                    height: 100,
-                    width: 300,
-                    borderRadius: 20,
-                  }}>
-                  <Text style={styles.smallText}>Days Left</Text>
-                  <Text note style={styles.largeText}>
-                    Days in Month
-                  </Text>
-                </Body>
-              </Col>
-              <Col>
-                <Body>
-                  <Text style={styles.rightText}>INR 5673</Text>
-                </Body>
-              </Col>
-            </Grid>
-          </Card>
+              {/* pie chart */}
+              <Card
+                style={{
+                  alignSelf: 'center',
+                  padding: 20,
+                  height: 150,
+                  width: 350,
+                  borderRadius: 20,
+                }}>
+                <Grid>
+                  <Col
+                    size={2}
+                    style={{backgroundColor: 'red', borderRadius: 20}}>
+                    <Body
+                      style={{
+                        textAlign: 'left',
+                        padding: 0,
+                        height: 100,
+                        width: 300,
+                        borderRadius: 20,
+                      }}>
+                      <Text style={styles.largeText}>LEGEND</Text>
+                    </Body>
+                  </Col>
+                  <Col size={3}>
+                    <Body>
+                      <Text style={styles.rightText}>PIE CHART HERE</Text>
+                    </Body>
+                  </Col>
+                </Grid>
+              </Card>
 
-          {/* pie chart */}
-          <Card
-            style={{
-              alignSelf: 'center',
-              padding: 20,
-              height: 150,
-              width: 350,
-              borderRadius: 20,
-            }}>
-            <Grid>
-              <Col size={2} style={{backgroundColor: 'red', borderRadius: 20}}>
-                <Body
-                  style={{
-                    textAlign: 'left',
-                    padding: 0,
-                    height: 100,
-                    width: 300,
-                    borderRadius: 20,
-                  }}>
-                  <Text style={styles.largeText}>LEGEND</Text>
-                </Body>
-              </Col>
-              <Col size={3}>
-                <Body>
-                  <Text style={styles.rightText}>PIE CHART HERE</Text>
-                </Body>
-              </Col>
-            </Grid>
-          </Card>
+              <Card
+                style={{
+                  alignSelf: 'center',
+                  padding: 20,
+                  height: 100,
+                  width: '100%',
+                  borderRadius: 20,
+                }}>
+                <Grid>
+                  <Row>
+                    <Col>
+                      <Text>Mathri</Text>
+                    </Col>
+                    <Col>
+                      <Text>Date</Text>
+                    </Col>
+                    <Col>
+                      <Text>5</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Text>Nveen</Text>
+                    </Col>
+                    <Col>
+                      <Text>Mahesh</Text>
+                    </Col>
+                  </Row>
+                </Grid>
+                <Grid>
+                  <Row>
+                    <Col>
+                      <Text>Mathri</Text>
+                    </Col>
+                    <Col>
+                      <Text>Date</Text>
+                    </Col>
+                    <Col>
+                      <Text>5</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Text>Nveen</Text>
+                    </Col>
+                    <Col>
+                      <Text>Mahesh</Text>
+                    </Col>
+                  </Row>
+                </Grid>
+                <Grid>
+                  <Row>
+                    <Col>
+                      <Text>Mathri</Text>
+                    </Col>
+                    <Col>
+                      <Text>Date</Text>
+                    </Col>
+                    <Col>
+                      <Text>5</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Text>Nveen</Text>
+                    </Col>
+                    <Col>
+                      <Text>Mahesh</Text>
+                    </Col>
+                  </Row>
+                </Grid>
+              </Card>
+            </View>
+          </ScrollView>
         </ImageBackground>
       </View>
     );
