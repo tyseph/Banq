@@ -8,6 +8,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './components/Home';
 import Wallet from './components/Wallet';
 import Profile from './components/Profile';
+import Split from './components/Split';
 
 import Login from './auth/Login';
 import Register from './auth/Register';
@@ -39,6 +40,7 @@ export default class App extends Component {
   createHomeTab = () => {
     return (
       <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen name="Split" component={Split}/>
         <Tab.Screen name="Wallet" component={Wallet} />
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Profile" component={Profile} />
