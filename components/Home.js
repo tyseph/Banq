@@ -76,14 +76,14 @@ export default class HomeScreen extends Component {
     // if (this.state.openNavBar == false) {
     return (
       <ImageBackground
-          style={styles.imgBackground}
-          imageStyle={styles.imgBG}
-          source={require('../assets/bg.png')}>
-          <Image
-            source={require('../assets/logo.png')}
-            style={styles.logoStyle}
-          />
-                  <View>
+        style={styles.imgBackground}
+        imageStyle={styles.imgBG}
+        source={require('../assets/bg.png')}>
+        <Image
+          source={require('../assets/logo.png')}
+          style={styles.logoStyle}
+        />
+        <View>
           <Card transparent style={styles.nameCard}>
             <CardItem style={styles.cardItemStyle}>
               <Left>
@@ -97,6 +97,9 @@ export default class HomeScreen extends Component {
               </Left>
             </CardItem>
           </Card>
+          <Button full style={styles.buttonStyle}>
+            <Text style={styles.buttonTextStyle}>Add Partition</Text>
+          </Button>
           <ScrollView>
             <View style={{height: 10000}}>
               <Card
@@ -184,6 +187,40 @@ export default class HomeScreen extends Component {
                   </Col>
                 </Grid>
               </Card>
+              <Card
+                style={{
+                  backgroundColor: 'green',
+                  alignSelf: 'center',
+                  padding: '3%',
+                  height: 100,
+                  width: 350,
+                  borderRadius: 20,
+                }}>
+                <Grid>
+                  <Col
+                    size={3}
+                    style={{borderRadius: 20}}>
+                    <Body
+                      style={{
+                        textAlign: 'left',
+                        height: 100,
+                        width: '80%',
+                        marginTop: 5,
+                        borderRadius: 20,
+                      }}>
+                      <Text style={{alignSelf: 'flex-start', padding: 2}}>Total Budget</Text>
+                      <Text style={{alignSelf: 'flex-start', padding: 2}}>Cash left</Text>
+                      <Text style={{alignSelf: 'flex-start', padding: 2}}>Mahesh</Text>
+                    </Body>
+                  </Col>
+                  <Col size={1}>
+                    <Body style={{flexDirection: 'row'}}>
+                      <Text>pencil</Text>
+                      <Text style={{marginLeft: 20}}>Save</Text>
+                    </Body>
+                  </Col>
+                </Grid>
+              </Card>
 
               {/* pie chart */}
               <Card
@@ -226,18 +263,26 @@ export default class HomeScreen extends Component {
                 }}>
                 <View>
                   <Grid>
-                    
                     <Row>
-                      <Col><Text>Mathri</Text></Col>
-                      <Col><Text>8-10-12</Text></Col>
+                      <Col>
+                        <Text>Mathri</Text>
+                      </Col>
+                      <Col>
+                        <Text>8-10-12</Text>
+                      </Col>
                     </Row>
-                    <Col style={{marginLeft: 300, marginTop: 10}}><Text>5</Text></Col>
-                    
+                    <Col style={{marginLeft: 300, marginTop: 10}}>
+                      <Text>5</Text>
+                    </Col>
+
                     <Row style={{marginTop: 20}}>
-                      <Col><Text>Naveen's Tea Stall</Text></Col>
-                      <Col><Text>Mahesh</Text></Col>
+                      <Col>
+                        <Text>Naveen's Tea Stall</Text>
+                      </Col>
+                      <Col>
+                        <Text>Mahesh</Text>
+                      </Col>
                     </Row>
-            
                   </Grid>
                 </View>
               </Card>
@@ -252,24 +297,30 @@ export default class HomeScreen extends Component {
                 }}>
                 <View>
                   <Grid>
-                    
                     <Row>
-                      <Col><Text>Mathri</Text></Col>
-                      <Col><Text>8-10-12</Text></Col>
+                      <Col>
+                        <Text>Mathri</Text>
+                      </Col>
+                      <Col>
+                        <Text>8-10-12</Text>
+                      </Col>
                     </Row>
-                    
+
                     <Row style={{marginTop: 20}}>
-                      <Col><Text>Naveen's Tea Stall</Text></Col>
-                      <Col><Text>Mahesh</Text></Col>
+                      <Col>
+                        <Text>Naveen's Tea Stall</Text>
+                      </Col>
+                      <Col>
+                        <Text>Mahesh</Text>
+                      </Col>
                     </Row>
-            
                   </Grid>
                 </View>
               </Card>
             </View>
-              </ScrollView>
-      </View>
-        </ImageBackground>
+          </ScrollView>
+        </View>
+      </ImageBackground>
     );
     // } else {
     //   return (
@@ -283,11 +334,23 @@ export default class HomeScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  buttonStyle: {
+    marginLeft: 20,
+    borderRadius: 25,
+    width: '50%',
+    backgroundColor: 'gray',
+  },
+  buttonTextStyle: {
+    fontSize: 18,
+    fontFamily: 'Oxygen-Bold',
+    fontWeight: '700',
+    color: 'white',
+  },
   imgBackground: {
     width: '100%',
     height: '100%',
     resizeMode: 'contain',
-    },
+  },
   imgBG: {
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
