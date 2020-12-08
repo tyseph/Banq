@@ -81,9 +81,9 @@ export default class Profile extends Component {
               width: 350,
               borderRadius: 20,
             }}>
-            <Grid>
+            {/* <Grid>
               <Text style={styles.largeText}>Shops</Text>
-            </Grid>
+            </Grid> */}
             <ScrollView>
               <Grid style={{marginTop: 0, paddingBottom: 30}}>
                 <Row>
