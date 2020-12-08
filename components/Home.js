@@ -75,8 +75,7 @@ export default class HomeScreen extends Component {
   render() {
     // if (this.state.openNavBar == false) {
     return (
-      <View style={{backgroundColor: 'white', height: '100%'}}>
-        <ImageBackground
+      <ImageBackground
           style={styles.imgBackground}
           imageStyle={styles.imgBG}
           source={require('../assets/bg.png')}>
@@ -84,6 +83,7 @@ export default class HomeScreen extends Component {
             source={require('../assets/logo.png')}
             style={styles.logoStyle}
           />
+                  <View>
           <Card transparent style={styles.nameCard}>
             <CardItem style={styles.cardItemStyle}>
               <Left>
@@ -97,11 +97,8 @@ export default class HomeScreen extends Component {
               </Left>
             </CardItem>
           </Card>
-            <ScrollView>
-            <View
-              style={{
-                height: 500,
-              }}>
+          <ScrollView>
+            <View style={{height: 10000}}>
               <Card
                 style={{
                   alignSelf: 'center',
@@ -234,6 +231,7 @@ export default class HomeScreen extends Component {
                       <Col><Text>Mathri</Text></Col>
                       <Col><Text>8-10-12</Text></Col>
                     </Row>
+                    <Col style={{marginLeft: 300, marginTop: 10}}><Text>5</Text></Col>
                     
                     <Row style={{marginTop: 20}}>
                       <Col><Text>Naveen's Tea Stall</Text></Col>
@@ -270,8 +268,8 @@ export default class HomeScreen extends Component {
               </Card>
             </View>
               </ScrollView>
-        </ImageBackground>
       </View>
+        </ImageBackground>
     );
     // } else {
     //   return (
@@ -287,7 +285,7 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   imgBackground: {
     width: '100%',
-    height: '80%',
+    height: '100%',
     resizeMode: 'contain',
     },
   imgBG: {
