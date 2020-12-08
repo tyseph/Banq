@@ -75,7 +75,7 @@ export default class HomeScreen extends Component {
   render() {
     // if (this.state.openNavBar == false) {
     return (
-      <View style={{backgroundColor: 'white'}}>
+      <View style={{backgroundColor: 'white', height: '100%'}}>
         <ImageBackground
           style={styles.imgBackground}
           imageStyle={styles.imgBG}
@@ -97,7 +97,7 @@ export default class HomeScreen extends Component {
               </Left>
             </CardItem>
           </Card>
-          <ScrollView>
+            <ScrollView>
             <View
               style={{
                 height: 500,
@@ -219,81 +219,57 @@ export default class HomeScreen extends Component {
                   </Col>
                 </Grid>
               </Card>
+              <Card
+                style={{
+                  alignSelf: 'center',
+                  padding: 20,
+                  height: 100,
+                  width: '90%',
+                  borderRadius: 20,
+                }}>
+                <View>
+                  <Grid>
+                    
+                    <Row>
+                      <Col><Text>Mathri</Text></Col>
+                      <Col><Text>8-10-12</Text></Col>
+                    </Row>
+                    
+                    <Row style={{marginTop: 20}}>
+                      <Col><Text>Naveen's Tea Stall</Text></Col>
+                      <Col><Text>Mahesh</Text></Col>
+                    </Row>
+            
+                  </Grid>
+                </View>
+              </Card>
 
               <Card
                 style={{
                   alignSelf: 'center',
                   padding: 20,
                   height: 100,
-                  width: '100%',
+                  width: '90%',
                   borderRadius: 20,
                 }}>
-                <Grid>
-                  <Row>
-                    <Col>
-                      <Text>Mathri</Text>
-                    </Col>
-                    <Col>
-                      <Text>Date</Text>
-                    </Col>
-                    <Col>
-                      <Text>5</Text>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Text>Nveen</Text>
-                    </Col>
-                    <Col>
-                      <Text>Mahesh</Text>
-                    </Col>
-                  </Row>
-                </Grid>
-                <Grid>
-                  <Row>
-                    <Col>
-                      <Text>Mathri</Text>
-                    </Col>
-                    <Col>
-                      <Text>Date</Text>
-                    </Col>
-                    <Col>
-                      <Text>5</Text>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Text>Nveen</Text>
-                    </Col>
-                    <Col>
-                      <Text>Mahesh</Text>
-                    </Col>
-                  </Row>
-                </Grid>
-                <Grid>
-                  <Row>
-                    <Col>
-                      <Text>Mathri</Text>
-                    </Col>
-                    <Col>
-                      <Text>Date</Text>
-                    </Col>
-                    <Col>
-                      <Text>5</Text>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Text>Nveen</Text>
-                    </Col>
-                    <Col>
-                      <Text>Mahesh</Text>
-                    </Col>
-                  </Row>
-                </Grid>
+                <View>
+                  <Grid>
+                    
+                    <Row>
+                      <Col><Text>Mathri</Text></Col>
+                      <Col><Text>8-10-12</Text></Col>
+                    </Row>
+                    
+                    <Row style={{marginTop: 20}}>
+                      <Col><Text>Naveen's Tea Stall</Text></Col>
+                      <Col><Text>Mahesh</Text></Col>
+                    </Row>
+            
+                  </Grid>
+                </View>
               </Card>
             </View>
-          </ScrollView>
+              </ScrollView>
         </ImageBackground>
       </View>
     );
@@ -313,7 +289,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '80%',
     resizeMode: 'contain',
-  },
+    },
   imgBG: {
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,

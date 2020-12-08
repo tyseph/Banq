@@ -45,7 +45,7 @@ export default class Profile extends Component {
   //   })
   // }
 
-  setModalVisible = visible => {
+  setModalVisible = (visible) => {
     this.setState({modalVisible: visible});
   };
 
@@ -181,13 +181,14 @@ export default class Profile extends Component {
                   </Body>
                 </Row>
                 <Row style={{marginTop: 0, paddingBottom: 30}}>
-                  <Picker iosHeader="Select one" mode="dropdown">
-                    {/* //selectedValue={this.state.selected1}
-                  //onValueChange={this.onValueChange.bind(this)}> */}
-                    <Item label="Mahesh" value="key0" />
-                    <Item label="Adarsh" value="key1" />
-                    <Item label="Naveen" value="key2" />
-                    <Item label="Vendiman" value="key3" />
+                  <Picker
+                    selectedValue={selectedValue}
+                    style={{height: 50, width: 150}}
+                    onValueChange={(itemValue, itemIndex) =>
+                      setSelectedValue(itemValue)
+                    }>
+                    <Picker.Item label="Java" value="java" />
+                    <Picker.Item label="JavaScript" value="js" />
                   </Picker>
                 </Row>
                 <Row>
