@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ImageBackground, StyleSheet, View, Image} from 'react-native';
+import {ImageBackground, StyleSheet, View, Image, Modal} from 'react-native';
 import {
   Container,
   Header,
@@ -16,11 +16,20 @@ import {
   Button,
   Icon,
   Right,
+  Picker,
+  Item,
+  TextInput,
 } from 'native-base';
 
 import auth from '@react-native-firebase/auth';
 
 export default class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalVisible: false,
+    };
+  }
   // SignOUt = () => {
   //   auth()
   //   .signOut()
@@ -29,7 +38,13 @@ export default class Profile extends Component {
   //   })
   // }
 
+  setModalVisible = visible => {
+    this.setState({modalVisible: visible});
+  };
+
   render() {
+    //const [modalVisible, setModalVisible] = useState(false);
+
     return (
       <View style={{backgroundColor: 'white'}}>
         <ImageBackground
@@ -52,109 +67,250 @@ export default class Profile extends Component {
           </CardItem>
 
           <Card
-            transparent
-            style={{
-              alignSelf: 'center',
-              padding: 5,
-              height: 130,
-              width: 350,
-              borderRadius: 20,
-            }}>
-            <Grid style={{marginTop: 0, paddingBottom: 30}}>
-              <Col>
-                <Body>
-                  <CardItem
-                    style={{
-                      padding: 0,
-                      margin: 0,
-                      height: 100,
-                      width: '50%',
-                      borderRadius: 20,
-                      backgroundColor: 'red',
-                    }}>
-                    <Text>ADD</Text>
-                  </CardItem>
-                </Body>
-              </Col>
-              <Col>
-                <Body>
-                  <CardItem
-                    style={{
-                      padding: 0,
-                      margin: 0,
-                      height: 100,
-                      width: '50%',
-                      borderRadius: 20,
-                      backgroundColor: 'red',
-                    }}>
-                    <Text>DEDUCT</Text>
-                  </CardItem>
-                </Body>
-              </Col>
-            </Grid>
-          </Card>
-
-          <Card
             style={{
               alignSelf: 'center',
               padding: 20,
-              height: 300,
+              height: 500,
               width: 350,
               borderRadius: 20,
             }}>
             <Grid>
-              <Body
-                style={{
-                  textAlign: 'left',
-                  padding: 0,
-                  height: 100,
-                  width: 300,
-                  borderRadius: 20,
-                  marginTop: 50,
-                  paddingBottom: 10,
-                }}>
-                <Text style={styles.largeText}>Shops</Text>
-              </Body>
+              <Text style={styles.largeText}>Shops</Text>
             </Grid>
             <Grid style={{marginTop: 0, paddingBottom: 30}}>
-              <Col>
+              <Row>
                 <Body>
-                  <Text style={styles.rightTextSmall}>Vendiman</Text>
+                  <Text style={styles.rightText}>VENDIMAN</Text>
                 </Body>
-              </Col>
-              <Col>
-                <Body
-                  style={{
-                    textAlign: 'left',
-                    padding: 0,
-                    height: 100,
-                    width: 300,
-                    borderRadius: 20,
-                  }}>
-                  <Icon
-                    type="FontAwesome"
-                    name="arrow-circle-o-right"
-                    style={{fontSize: 30, color: 'black'}}
-                  />
+              </Row>
+              <Row style={{marginTop: 0, paddingBottom: 30}}>
+                <Picker iosHeader="Select one" mode="dropdown">
+                  {/* //selectedValue={this.state.selected1}
+                  //onValueChange={this.onValueChange.bind(this)}> */}
+                  <Item label="Mahesh" value="key0" />
+                  <Item label="Adarsh" value="key1" />
+                  <Item label="Naveen" value="key2" />
+                  <Item label="Vendiman" value="key3" />
+                </Picker>
+              </Row>
+              <Row>
+                <Col>
+                  <Body>
+                    <Text style={styles.rightTextSmall}>Lays Pack Blue</Text>
+                  </Body>
+                </Col>
+                <Col>
+                  <Body
+                    style={{
+                      textAlign: 'left',
+                      padding: 0,
+                      height: 100,
+                      width: 300,
+                      borderRadius: 20,
+                    }}>
+                    <Icon
+                      type="FontAwesome"
+                      name="arrow-circle-o-right"
+                      style={{fontSize: 15, color: 'black'}}
+                    />
+                  </Body>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <Body>
+                    <Text style={styles.rightTextSmall}>Lays Pack Blue</Text>
+                  </Body>
+                </Col>
+                <Col>
+                  <Body
+                    style={{
+                      textAlign: 'left',
+                      padding: 0,
+                      height: 100,
+                      width: 300,
+                      borderRadius: 20,
+                    }}>
+                    <Icon
+                      type="FontAwesome"
+                      name="arrow-circle-o-right"
+                      style={{fontSize: 15, color: 'black'}}
+                    />
+                  </Body>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <Body>
+                    <Text style={styles.rightTextSmall}>Lays Pack Blue</Text>
+                  </Body>
+                </Col>
+                <Col>
+                  <Body
+                    style={{
+                      textAlign: 'left',
+                      padding: 0,
+                      height: 100,
+                      width: 300,
+                      borderRadius: 20,
+                    }}>
+                    <Icon
+                      type="FontAwesome"
+                      name="arrow-circle-o-right"
+                      style={{fontSize: 15, color: 'black'}}
+                    />
+                  </Body>
+                </Col>
+              </Row>
+            </Grid>
+
+            <Grid style={{marginTop: 0, paddingBottom: 30}}>
+              <Row>
+                <Body>
+                  <Text style={styles.rightText}>VENDIMAN</Text>
                 </Body>
-              </Col>
+              </Row>
+              <Row style={{marginTop: 0, paddingBottom: 30}}>
+                <Picker iosHeader="Select one" mode="dropdown">
+                  {/* //selectedValue={this.state.selected1}
+                  //onValueChange={this.onValueChange.bind(this)}> */}
+                  <Item label="Mahesh" value="key0" />
+                  <Item label="Adarsh" value="key1" />
+                  <Item label="Naveen" value="key2" />
+                  <Item label="Vendiman" value="key3" />
+                </Picker>
+              </Row>
+              <Row>
+                <Col>
+                  <Body>
+                    <Text style={styles.rightTextSmall}>Lays Pack Blue</Text>
+                  </Body>
+                </Col>
+                <Col>
+                  <Body
+                    style={{
+                      textAlign: 'left',
+                      padding: 0,
+                      height: 100,
+                      width: 300,
+                      borderRadius: 20,
+                    }}>
+                    <Icon
+                      type="FontAwesome"
+                      name="arrow-circle-o-right"
+                      style={{fontSize: 15, color: 'black'}}
+                    />
+                  </Body>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <Body>
+                    <Text style={styles.rightTextSmall}>Lays Pack Blue</Text>
+                  </Body>
+                </Col>
+                <Col>
+                  <Body
+                    style={{
+                      textAlign: 'left',
+                      padding: 0,
+                      height: 100,
+                      width: 300,
+                      borderRadius: 20,
+                    }}>
+                    <Icon
+                      type="FontAwesome"
+                      name="arrow-circle-o-right"
+                      style={{fontSize: 15, color: 'black'}}
+                    />
+                  </Body>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col>
+                  <Body>
+                    <Text style={styles.rightTextSmall}>Lays Pack Blue</Text>
+                  </Body>
+                </Col>
+                <Col>
+                  <Body
+                    style={{
+                      textAlign: 'left',
+                      padding: 0,
+                      height: 100,
+                      width: 300,
+                      borderRadius: 20,
+                    }}>
+                    <Icon
+                      type="FontAwesome"
+                      name="arrow-circle-o-right"
+                      style={{fontSize: 15, color: 'black'}}
+                    />
+                  </Body>
+                </Col>
+              </Row>
+            </Grid>
+
+            <Grid style={{marginTop: 0, marginBottom: 0, paddingBottom: 0}}>
+              <Row>
+                <Col>
+                  <Button
+                    onPress={() => {
+                      this.setModalVisible(true);
+                    }}
+                    style={styles.buttonStyle}>
+                    <Text style={styles.buttonTextStyle}>Add</Text>
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    onPress={() => {
+                      this.props.navigation.navigate('Home');
+                    }}
+                    style={styles.buttonStyle}>
+                    <Text style={styles.buttonTextStyle}>Save Changes</Text>
+                  </Button>
+                </Col>
+              </Row>
             </Grid>
           </Card>
-
-          {/* LOGOUT */}
-          {/* <View
-            style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Button
-              rounded
-              // onPress={() => {this.props.navigation.navigate('Home')}}
-              style={styles.buttonStyleLogout}>
-              <Text style={styles.buttonTextStyle}>Logout</Text>
-            </Button>
-          </View> */}
         </ImageBackground>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          statusBarTranslucent={true}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text
+                style={{
+                  fontSize: 30,
+                  textAlign: 'center',
+                  fontWeight: 'bold',
+                }}>
+                Enter Details
+              </Text>
+
+              <Button title="Submit" onPress={this.onSubmit} />
+              <Button
+                title="Cancel"
+                onPress={() => {
+                  this.setModalVisible(false);
+                }}
+              />
+              <Button
+                title="Cancel"
+                onPress={() => {
+                  this.setModalVisible(false);
+                }}
+              />
+            </View>
+          </View>
+        </Modal>
       </View>
     );
     // } else {
@@ -171,7 +327,7 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   imgBackground: {
     width: '100%',
-    height: '80%',
+    height: '100%',
     resizeMode: 'contain',
   },
   imgBG: {
@@ -192,6 +348,7 @@ const styles = StyleSheet.create({
     color: 'black',
     fontFamily: 'Oxygen-Bold',
     fontSize: 30,
+    textAlign: 'center',
   },
   largeText: {
     color: 'black',
@@ -225,17 +382,19 @@ const styles = StyleSheet.create({
     fontFamily: 'Oxygen-Regular',
     fontSize: 15,
   },
-  buttonStyleLogout: {
-    borderRadius: 25,
-    width: '50%',
+  buttonStyle: {
+    borderRadius: 20,
+    width: '98%',
     justifyContent: 'center',
     backgroundColor: '#EA5656',
-    marginTop: 15,
+    marginTop: 0,
   },
   buttonTextStyle: {
-    fontSize: 30,
+    fontSize: 16,
     fontFamily: 'Oxygen-Bold',
     fontWeight: 'bold',
     color: 'white',
+    textAlign: 'center',
+    padding: 1,
   },
 });
